@@ -1,2 +1,3 @@
 # BusInfo
-BusInfo
+버스 예매 현황을 알려주는 프로그램
+
