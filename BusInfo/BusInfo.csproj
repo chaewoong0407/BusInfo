@@ -55,14 +55,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BusInfo.Designer.cs">
       <DependentUpon>BusInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup.Designer.cs">
+      <DependentUpon>Lookup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusInfo.resx">
+      <DependentUpon>BusInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup.resx">
+      <DependentUpon>Lookup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

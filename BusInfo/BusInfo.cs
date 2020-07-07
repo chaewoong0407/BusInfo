@@ -16,5 +16,22 @@ namespace BusInfo
         {
             InitializeComponent();
         }
+
+        private void BusInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form LookupFrom = new Lookup();
+            LookupFrom.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form AdminFrom = new Admin();
+            AdminFrom.ShowDialog();
+        }
     }
 }
