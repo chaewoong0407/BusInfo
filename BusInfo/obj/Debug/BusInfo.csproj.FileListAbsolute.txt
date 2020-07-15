@@ -34,3 +34,6 @@ C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.Login.resources
 C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.Register.resources
 C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.AdminLogin.resources
 C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.SelectLogin.resources
+C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.honor.resources
+C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.normal.resources
+C:\Users\user\Desktop\BusInfo\BusInfo\obj\Debug\BusInfo.Premium.resources

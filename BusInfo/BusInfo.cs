@@ -19,10 +19,6 @@ namespace BusInfo
         {
             InitializeComponent();
         }
-        private void BusInfo_Load(object sender, EventArgs e)
-        {
-
-        }
         public void LabelChange(string name, int _IsAdmin)
         {
             label7.Text = name+"님 반갑습니다.";
@@ -32,23 +28,55 @@ namespace BusInfo
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string origin = textBox1.Text;
-            string destination = textBox2.Text;
-            string date = textBox3.Text + "-" + textBox4.Text + "-" + textBox5.Text;
-            string rating = metroComboBox1.SelectedItem.ToString();
-            Form LookupFrom = new Lookup(origin, destination, date, rating);
-            LookupFrom.Show();
+            if(!login)
+            {
+                MessageBox.Show("로그인 후에 이용할 수 있습니다.");
+            } else
+            {
+                if(textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" ||
+                    textBox4.Text == "" || textBox5.Text == "" || metroComboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("내용을 전부 입력하세요");
+                } else
+                {
+                    string origin = textBox1.Text;
+                    string destination = textBox2.Text;
+                    string date = textBox3.Text + "-" + textBox4.Text + "-" + textBox5.Text;
+                    string rating = metroComboBox1.SelectedItem.ToString();
+                    Form LookupFrom = new Lookup(origin, destination, date, rating);
+                    LookupFrom.Show();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    metroComboBox1.SelectedItem = null;
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(IsAdmin == 1)
+            if(!login)
             {
-                Form AdminFrom = new Admin();
-                AdminFrom.ShowDialog();
+                MessageBox.Show("로그인 후에 이용할 수 있습니다.");
             } else
             {
-                MessageBox.Show("관리자만 이용할 수 있습니다.");
+                if (IsAdmin == 1)
+                {
+                    Form AdminFrom = new Admin();
+                    AdminFrom.ShowDialog();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    metroComboBox1.SelectedItem = null;
+                }
+                else
+                {
+                    MessageBox.Show("관리자만 이용할 수 있습니다.");
+                }
             }
         }
 
@@ -58,6 +86,12 @@ namespace BusInfo
             {
                 Form SelectLogin = new SelectLogin(this);
                 SelectLogin.Show();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                metroComboBox1.SelectedItem = null;
             } else
             {
                 MessageBox.Show("로그아웃 되었습니다.");

@@ -99,6 +99,24 @@
     <Compile Include="SelectLogin.Designer.cs">
       <DependentUpon>SelectLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="honor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honor.Designer.cs">
+      <DependentUpon>honor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="normal.Designer.cs">
+      <DependentUpon>normal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Premium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Premium.Designer.cs">
+      <DependentUpon>Premium.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +146,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectLogin.resx">
       <DependentUpon>SelectLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honor.resx">
+      <DependentUpon>honor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="normal.resx">
+      <DependentUpon>normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Premium.resx">
+      <DependentUpon>Premium.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

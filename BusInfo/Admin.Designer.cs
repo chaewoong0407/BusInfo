@@ -48,8 +48,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -201,7 +203,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(132, 370);
+            this.button1.Location = new System.Drawing.Point(132, 425);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 49);
             this.button1.TabIndex = 7;
@@ -345,16 +347,6 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(6, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "등급";
-            // 
             // metroComboBox3
             // 
             this.metroComboBox3.FormattingEnabled = true;
@@ -369,11 +361,41 @@
             this.metroComboBox3.TabIndex = 1;
             this.metroComboBox3.UseSelectable = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(6, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "등급";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
+            this.label10.Location = new System.Drawing.Point(83, 369);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 37);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "요금";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox6.Location = new System.Drawing.Point(156, 369);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(184, 45);
+            this.textBox6.TabIndex = 3;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 442);
+            this.ClientSize = new System.Drawing.Size(452, 497);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -422,5 +444,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
