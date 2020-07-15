@@ -18,14 +18,30 @@ namespace BusInfo
         public Lookup()
         {
             InitializeComponent();
+        }
+        public Lookup(string origin, string destination, string date, string rating)
+        {
+            InitializeComponent();
             DataSet ds = new DataSet();
             using (SqlConnection conn = new SqlConnection(constr))
             {
-                conn.Open();
-                string sql = "SELECT * FROM section";
+                if(rating == "전체")
+                {
+                    conn.Open();
+                    string sql = $"SELECT * FROM section WHERE origin = '{origin}' AND " +
+                        $"destination = '{destination}' and date = '{date}'";
 
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
-                adapter.Fill(ds, "section");
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                    adapter.Fill(ds, "section");
+                } else
+                {
+                    conn.Open();
+                    string sql = $"SELECT * FROM section WHERE origin = '{origin}' AND " +
+                        $"destination = '{destination}' and date = '{date}' and rating = '{rating}'";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                    adapter.Fill(ds, "section");
+                }
 
             }
             dataGridView1.DataSource = ds.Tables[0];

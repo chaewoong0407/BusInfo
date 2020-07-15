@@ -28,17 +28,19 @@ namespace BusInfo
                 string destination = textBox2.Text;
                 string date = textBox3.Text + "-" + textBox4.Text + "-" + textBox5.Text;
                 string time = metroComboBox1.SelectedItem + ":" + metroComboBox2.SelectedItem;
+                string rating = metroComboBox3.SelectedItem.ToString();
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO section(origin, destination, date, time) " +
-                    "VALUES(@origin, @destination, @date, @time)";
+                cmd.CommandText = "INSERT INTO section(origin, destination, date, time, rating) " +
+                    "VALUES(@origin, @destination, @date, @time, @rating)";
                 cmd.Parameters.AddWithValue("@origin", origin);
                 cmd.Parameters.AddWithValue("@destination", destination);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@time", time);
+                cmd.Parameters.AddWithValue("@rating", rating);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }

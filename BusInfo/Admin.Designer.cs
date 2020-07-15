@@ -47,9 +47,13 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -197,7 +201,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(141, 360);
+            this.button1.Location = new System.Drawing.Point(132, 370);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 49);
             this.button1.TabIndex = 7;
@@ -234,7 +238,7 @@
             "21",
             "22",
             "23"});
-            this.metroComboBox1.Location = new System.Drawing.Point(123, 310);
+            this.metroComboBox1.Location = new System.Drawing.Point(33, 310);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(52, 30);
             this.metroComboBox1.TabIndex = 8;
@@ -305,7 +309,7 @@
             "57",
             "58",
             "59"});
-            this.metroComboBox2.Location = new System.Drawing.Point(248, 310);
+            this.metroComboBox2.Location = new System.Drawing.Point(162, 310);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(52, 30);
             this.metroComboBox2.TabIndex = 9;
@@ -315,7 +319,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
-            this.label7.Location = new System.Drawing.Point(181, 303);
+            this.label7.Location = new System.Drawing.Point(107, 303);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 37);
             this.label7.TabIndex = 7;
@@ -325,17 +329,52 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
-            this.label8.Location = new System.Drawing.Point(306, 303);
+            this.label8.Location = new System.Drawing.Point(228, 303);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 37);
             this.label8.TabIndex = 10;
             this.label8.Text = "분";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.metroComboBox3);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Location = new System.Drawing.Point(276, 289);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(122, 65);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(6, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "등급";
+            // 
+            // metroComboBox3
+            // 
+            this.metroComboBox3.FormattingEnabled = true;
+            this.metroComboBox3.ItemHeight = 24;
+            this.metroComboBox3.Items.AddRange(new object[] {
+            "프리미엄",
+            "우등",
+            "일반"});
+            this.metroComboBox3.Location = new System.Drawing.Point(45, 27);
+            this.metroComboBox3.Name = "metroComboBox3";
+            this.metroComboBox3.Size = new System.Drawing.Size(62, 30);
+            this.metroComboBox3.TabIndex = 1;
+            this.metroComboBox3.UseSelectable = true;
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 442);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.metroComboBox2);
@@ -352,6 +391,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +419,8 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private MetroFramework.Controls.MetroComboBox metroComboBox3;
+        private System.Windows.Forms.Label label9;
     }
 }

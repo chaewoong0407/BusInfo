@@ -37,14 +37,16 @@ namespace BusInfo
             SqlConnection conn = new SqlConnection(constr);
             string id = textBox1.Text;
             string pw = textBox2.Text;
+            string name;
             conn.Open();
             string sql = $"SELECT * FROM register WHERE id='{id}' AND password='{pw}'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader mdr = cmd.ExecuteReader();
             if (mdr.Read())
             {
+                name = mdr["name"].ToString();
                 MessageBox.Show("로그인 성공");
-                _BusInfo.LabelChange("유저", 0);
+                _BusInfo.LabelChange(name, 0);
                 this.Close();
             }
             else

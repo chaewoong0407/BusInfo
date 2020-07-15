@@ -14,6 +14,7 @@ namespace BusInfo
     public partial class BusInfo : MetroFramework.Forms.MetroForm
     {
         int IsAdmin;
+        bool login = false;
         public BusInfo()
         {
             InitializeComponent();
@@ -27,10 +28,15 @@ namespace BusInfo
             label7.Text = name+"님 반갑습니다.";
             IsAdmin = _IsAdmin;
             button3.Text = "로그아웃";
+            login = true;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Form LookupFrom = new Lookup();
+            string origin = textBox1.Text;
+            string destination = textBox2.Text;
+            string date = textBox3.Text + "-" + textBox4.Text + "-" + textBox5.Text;
+            string rating = metroComboBox1.SelectedItem.ToString();
+            Form LookupFrom = new Lookup(origin, destination, date, rating);
             LookupFrom.Show();
         }
 
@@ -48,8 +54,18 @@ namespace BusInfo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form SelectLogin = new SelectLogin(this);
-            SelectLogin.Show();
+            if(!login)
+            {
+                Form SelectLogin = new SelectLogin(this);
+                SelectLogin.Show();
+            } else
+            {
+                MessageBox.Show("로그아웃 되었습니다.");
+                IsAdmin = 0;
+                button3.Text = "로그인";
+                label7.Text = "";
+                login = false;
+            }
         }
     }
 }
