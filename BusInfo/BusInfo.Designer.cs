@@ -47,8 +47,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,7 +73,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 45);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "";
             // 
             // label1
             // 
@@ -101,7 +101,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(184, 45);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "";
             // 
             // label2
             // 
@@ -145,7 +144,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(55, 45);
             this.textBox5.TabIndex = 5;
-            this.textBox5.Text = "";
             // 
             // label5
             // 
@@ -164,7 +162,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(55, 45);
             this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "";
             // 
             // label4
             // 
@@ -183,7 +180,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(106, 45);
             this.textBox3.TabIndex = 1;
-            this.textBox3.Text = "";
             // 
             // label3
             // 
@@ -241,7 +237,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(194, 42);
+            this.button3.Location = new System.Drawing.Point(194, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 32);
             this.button3.TabIndex = 5;
@@ -267,16 +263,6 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(6, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "등급";
-            // 
             // metroComboBox1
             // 
             this.metroComboBox1.FormattingEnabled = true;
@@ -292,11 +278,40 @@
             this.metroComboBox1.TabIndex = 1;
             this.metroComboBox1.UseSelectable = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label8.Location = new System.Drawing.Point(6, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "등급";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(194, 63);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(119, 32);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "예약내역";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // BusInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 383);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
@@ -343,5 +358,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button4;
     }
 }

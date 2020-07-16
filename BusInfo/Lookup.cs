@@ -16,9 +16,9 @@ namespace BusInfo
         private SqlConnection conn = new SqlConnection();
         private string constr = "SERVER=127.0.0.1; DATABASE=BusInfo; UID=BusInfo; PASSWORD='3407'";
         string level, depart, arrive, date, time, _name;
-        string name;
-        int grade, cls, number, seatNum;
         int _IsAdmin;
+        string name;
+        int seatNum;
         int fare;
         int type = 0;
         public Lookup()
@@ -40,8 +40,9 @@ namespace BusInfo
         public Lookup(int types)
         {
             InitializeComponent();
-            type = types;
             DataSet ds = new DataSet();
+            button1.Text = "취소하기";
+            type = types;
             using (SqlConnection conn = new SqlConnection(constr))
             {
                 conn.Open();
@@ -53,6 +54,24 @@ namespace BusInfo
             }
             dataGridView1.DataSource = ds.Tables[0];
         }
+        public Lookup(int types, string __name)
+        {
+            type = types;
+            InitializeComponent();
+
+            button1.Text = "취소하기";
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                conn.Open();
+                string sql = $"SELECT * FROM Reservation WHERE 이름 = '{__name}'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                adapter.Fill(ds, "Reservation");
+            }
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
         public Lookup(string origin, string destination, string date, string rating, string name, int IsAdmin)
         {
             InitializeComponent();
@@ -145,7 +164,7 @@ namespace BusInfo
                         $"AND 등급 = '{level}' AND 좌석번호 = '{seatNum}' AND 시간 = '{time}'";
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("구간이 삭제되었습니다.");
+                    MessageBox.Show("해당 유저의 예약이 취소되었습니다.");
 
                     conn.Open();
                     string sql = "SELECT register.학년, register.반, register.번호, Reservation.이름, Reservation.출발지, Reservation.도착지, Reservation.날짜, Reservation.시간, Reservation.등급, Reservation.좌석번호 FROM register, " +
@@ -155,12 +174,34 @@ namespace BusInfo
                     adapter.Fill(ds, "register");
                 }
                 dataGridView1.DataSource = ds.Tables[0];
+            } else if (type == 3) {
+                DataSet ds = new DataSet();
+                using (SqlConnection conn = new SqlConnection(constr))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    date = date.Replace("오전 12:00:00", "");
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"DELETE FROM Reservation WHERE 이름 = '{name}' AND " +
+                        $"출발지 = '{depart}' AND 도착지 = '{arrive}'AND 날짜 = '{date}' " +
+                        $"AND 등급 = '{level}' AND 좌석번호 = '{seatNum}' AND 시간 = '{time}'";
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("예약이 취소되었습니다.");
+
+                    conn.Open();
+                    string sql = $"SELECT * FROM Reservation WHERE 이름='{name}'";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                    adapter.Fill(ds, "Reservation");
+                }
+                dataGridView1.DataSource = ds.Tables[0];
             }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(type == 2)
+            if(type == 2 || type == 3)
             {
                 name = dataGridView1.Rows[e.RowIndex].Cells["이름"].Value.ToString();
                 date = dataGridView1.Rows[e.RowIndex].Cells["날짜"].Value.ToString();

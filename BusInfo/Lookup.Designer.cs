@@ -74,7 +74,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(296, 378);
+            this.button1.Location = new System.Drawing.Point(297, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 49);
             this.button1.TabIndex = 4;

@@ -103,5 +103,24 @@ namespace BusInfo
                 login = false;
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!login)
+            {
+                MessageBox.Show("로그인 후에 이용할 수 있습니다.");
+            }
+            else {
+                if(IsAdmin == 1)
+                {
+                    MessageBox.Show("관리자는 예약내역을 볼 수 없습니다.");
+                } else
+                {
+                    int types = 3;
+                    Form LookupFrom = new Lookup(types, _name);
+                    LookupFrom.Show();
+                }
+            }
+        }
     }
 }
