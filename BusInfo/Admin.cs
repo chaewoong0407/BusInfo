@@ -46,8 +46,20 @@ namespace BusInfo
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("구간이 추가되었습니다.");
-                this.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form Lookup = new Lookup();
+            Lookup.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int types = 2;
+            Form Lookup = new Lookup(types);
+            Lookup.Show();
         }
     }
 }

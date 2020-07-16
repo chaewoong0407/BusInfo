@@ -13,6 +13,7 @@ namespace BusInfo
 {
     public partial class BusInfo : MetroFramework.Forms.MetroForm
     {
+        string _name;
         int IsAdmin;
         bool login = false;
         public BusInfo()
@@ -22,6 +23,7 @@ namespace BusInfo
         public void LabelChange(string name, int _IsAdmin)
         {
             label7.Text = name+"님 반갑습니다.";
+            _name = name;
             IsAdmin = _IsAdmin;
             button3.Text = "로그아웃";
             login = true;
@@ -43,7 +45,7 @@ namespace BusInfo
                     string destination = textBox2.Text;
                     string date = textBox3.Text + "-" + textBox4.Text + "-" + textBox5.Text;
                     string rating = metroComboBox1.SelectedItem.ToString();
-                    Form LookupFrom = new Lookup(origin, destination, date, rating);
+                    Form LookupFrom = new Lookup(origin, destination, date, rating, _name, IsAdmin);
                     LookupFrom.Show();
                     textBox1.Text = "";
                     textBox2.Text = "";

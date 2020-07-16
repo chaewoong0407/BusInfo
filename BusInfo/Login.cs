@@ -39,12 +39,12 @@ namespace BusInfo
             string pw = textBox2.Text;
             string name;
             conn.Open();
-            string sql = $"SELECT * FROM register WHERE id='{id}' AND password='{pw}'";
+            string sql = $"SELECT * FROM register WHERE 아이디='{id}' AND 패스워드='{pw}'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader mdr = cmd.ExecuteReader();
             if (mdr.Read())
             {
-                name = mdr["name"].ToString();
+                name = mdr["이름"].ToString();
                 MessageBox.Show("로그인 성공");
                 _BusInfo.LabelChange(name, 0);
                 this.Close();
