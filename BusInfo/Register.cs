@@ -31,6 +31,7 @@ namespace BusInfo
                 int grade = int.Parse((string)metroComboBox1.SelectedItem);
                 int cls = int.Parse((string)metroComboBox2.SelectedItem);
                 int number = int.Parse((string)metroComboBox3.SelectedItem);
+                string name = textBox4.Text;
 
                 if(pw == repw)
                 {
@@ -38,13 +39,14 @@ namespace BusInfo
                     SqlCommand cmd = new SqlCommand();
 
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO register(id, password, grade, class, number) " +
-                        "VALUES(@id, @password, @grade, @class, @number)";
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@password", pw);
-                    cmd.Parameters.AddWithValue("@grade", grade);
-                    cmd.Parameters.AddWithValue("@class", cls);
-                    cmd.Parameters.AddWithValue("@number", number);
+                    cmd.CommandText = "INSERT INTO register(아이디, 패스워드, 학년, 반, 번호, 이름) " +
+                        "VALUES(@아이디, @패스워드, @학년, @반, @번호, @이름)";
+                    cmd.Parameters.AddWithValue("@아이디", id);
+                    cmd.Parameters.AddWithValue("@패스워드", pw);
+                    cmd.Parameters.AddWithValue("@학년", grade);
+                    cmd.Parameters.AddWithValue("@반", cls);
+                    cmd.Parameters.AddWithValue("@번호", number);
+                    cmd.Parameters.AddWithValue("@이름", name);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("회원가입 성공!!");
                     conn.Close();
